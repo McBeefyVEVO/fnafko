@@ -1,0 +1,46 @@
+body{
+    background:url(../img/static.gif);
+    background-size: cover;
+}
+
+#start{
+
+    position: absolute;
+    display: block;
+
+    padding: 25px;
+    font-size:large;
+
+    top: 55%;
+    left: 45%;
+
+    background-color:gray;
+    opacity: 90%;
+    color: white;
+}
+
+#main_title{
+    position: absolute;
+    display: block;
+
+    background-color:gray;
+    opacity: 90%;
+    color: white;
+
+    padding: 45px;
+    font-size:large;
+    letter-spacing: 5px;;
+    
+    left: 38%;
+    top: 42%;
+    }
+
+#forsen{
+
+    position: absolute;
+    display: block;
+
+    left: 40%;
+    top: 8%;
+
+}
