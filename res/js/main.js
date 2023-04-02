@@ -58,7 +58,7 @@ close_cam.onclick = () => {
 
 
 //------------------------------------------------------------------------------------------
-//Koukání doleva/doprava
+//Koukání doleva/doprava + dveře a světla
 
 
 look_left.onclick = () => {
