@@ -113,3 +113,38 @@ body{
     background-color: darkgray;
     color:white;
 }
+
+#look_left_back{
+    position: absolute;
+    display: none;
+    
+
+    padding: 25px;
+    width: 30px;
+    height: 540px;
+
+    top: 20%;
+    left: 96.7%;
+
+    font-size: 30px;
+
+    background-color: darkgray;
+    color:white;
+}
+
+#look_right_back{
+    position: absolute;
+    display: none;
+    
+
+    padding: 25px;
+    width: 30px;
+    height: 540px;
+
+    top: 20%;
+
+    font-size: 30px;
+
+    background-color: darkgray;
+    color:white;
+}
