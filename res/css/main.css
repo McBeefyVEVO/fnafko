@@ -44,3 +44,72 @@ body{
     top: 8%;
 
 }
+
+#open_cam{
+    
+    position: absolute;
+    display: none;
+
+    top: 85%;
+    left: 36%;
+
+    padding: 40px;
+    width: 540px;
+
+    font-size: 30px;
+
+    background-color: darkgray;
+    color:white;
+}
+
+#close_cam{
+    
+    position: absolute;
+    display: none;
+
+    top: 85%;
+    left: 36%;
+
+    padding: 40px;
+    width: 540px;
+
+    font-size: 30px;
+
+    background-color: darkgray;
+    color:white;
+}
+
+#look_left{
+    position: absolute;
+    display: none;
+    
+
+    padding: 25px;
+    width: 30px;
+    height: 540px;
+
+    top: 20%;
+
+    font-size: 30px;
+
+    background-color: darkgray;
+    color:white;
+}
+
+#look_right{
+    position: absolute;
+    display: none;
+    
+
+    padding: 25px;
+    width: 30px;
+    height: 540px;
+
+    top: 20%;
+    left: 96.7%;
+
+    font-size: 30px;
+
+    background-color: darkgray;
+    color:white;
+}
