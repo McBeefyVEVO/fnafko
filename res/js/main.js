@@ -10,12 +10,20 @@ const look_right = document.getElementById("look_right");
 const look_left_back = document.getElementById("look_left_back");
 const look_right_back = document.getElementById("look_right_back");
 
-let camera_on = 0;
-let leftopen = 1;
-let rightopen = 1;
+const lightbutton_left = document.getElementById("lightbutton_left");
+const lightbutton_right = document.getElementById("lightbutton_right");
 
-let lighton_left = 0;
-let lighton_right = 0;
+const opendoorbutton_left = document.getElementById("opendoorbutton_left");
+const opendoorbutton_right = document.getElementById("opendoorbutton_right");
+
+const closedoorbutton_left = document.getElementById("closedoorbutton_left");
+const closedoorbutton_right = document.getElementById("closedoorbutton_right");
+
+let camera_on = 0;
+
+let leftopen = true;
+let rightopen = true;
+
 
 //------------------------------------------------------------------------------------------
 //Startík
@@ -68,40 +76,50 @@ look_left.onclick = () => {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
 
-    if(leftopen == 0){
-    document.body.style.background = "url(./res/img/left_closed.png)";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundPosition = "center center";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundAttachment = "fixed";
-    }
-
     open_cam.style.display = "none";
     look_left.style.display = "none";
     look_right.style.display = "none";
     look_left_back.style.display = "block";
+
+    lightbutton_left.style.display = "block";
+    closedoorbutton_left.style.display = "block";
+
+    if(leftopen == false){
+        document.body.style.background = "url(./res/img/left_closed.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";   
+        
+        lightbutton_left.style.display = "none";
+    }
 }
 
 look_right.onclick = () => {
+    console.log(rightopen)
     document.body.style.background = "url(./res/img/right_open.png)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
 
-    if(rightopen == 0){
-    document.body.style.background = "url(./res/img/right_closed.png)";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundPosition = "center center";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundAttachment = "fixed";
-    }
-
-
     open_cam.style.display = "none";
     look_left.style.display = "none";
     look_right.style.display = "none";
     look_right_back.style.display = "block";
+
+    lightbutton_right.style.display = "block";
+    closedoorbutton_right.style.display = "block";
+
+    if(rightopen == false){
+        document.body.style.background = "url(./res/img/right_closed.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";  
+        
+        lightbutton_right.style.display = "none";
+    }
 }
 
 look_left_back.onclick = () => {
@@ -115,6 +133,10 @@ look_left_back.onclick = () => {
     look_left.style.display = "block";
     look_right.style.display = "block";
     look_left_back.style.display = "none";
+
+    lightbutton_left.style.display = "none";
+    closedoorbutton_left.style.display = "none";
+    opendoorbutton_left.style.display = "none";
 }
 
 look_right_back.onclick = () => {
@@ -128,4 +150,121 @@ look_right_back.onclick = () => {
     look_left.style.display = "block";
     look_right.style.display = "block";
     look_right_back.style.display = "none";
+
+    lightbutton_right.style.display = "none";
+    closedoorbutton_right.style.display = "none";
+    opendoorbutton_right.style.display = "none";
 }
+
+//--------------------------------------------------------------------------------------------------------------
+
+lightbutton_left.onmousedown = () => {
+            
+    document.body.style.background = "url(./res/img/left_open_light.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+
+    };
+
+lightbutton_left.onmouseup = () => {
+            
+    document.body.style.background = "url(./res/img/left_open.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+    
+    }
+    
+lightbutton_right.onmousedown = () => {
+            
+        document.body.style.background = "url(./res/img/right_open_light.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+    
+        };
+    
+lightbutton_right.onmouseup = () => {
+                
+        document.body.style.background = "url(./res/img/right_open.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        
+        }    
+
+//-------------------------------------------------------------------------------------------
+
+    
+opendoorbutton_left.onclick = () => {
+
+    leftopen = true;
+    console.log(leftopen)
+
+    document.body.style.background = "url(./res/img/left_open.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+        
+    opendoorbutton_left.style.display = "none";
+    closedoorbutton_left.style.display = "block";
+
+    lightbutton_left.style.display = "block";
+}        
+
+closedoorbutton_left.onclick = () => {
+
+    leftopen = false;
+    console.log(leftopen)
+
+    document.body.style.background = "url(./res/img/left_closed.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+        
+    opendoorbutton_left.style.display = "block";
+    closedoorbutton_left.style.display = "none";
+
+    lightbutton_left.style.display = "none";
+}
+
+opendoorbutton_right.onclick = () => {
+
+    rightopen = true;
+    console.log(rightopen)
+
+    document.body.style.background = "url(./res/img/right_open.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+        
+    opendoorbutton_right.style.display = "none";
+    closedoorbutton_right.style.display = "block";
+
+    lightbutton_right.style.display = "block";
+}        
+
+closedoorbutton_right.onclick = () => {
+
+    rightopen = false;
+    console.log(rightopen)
+
+    document.body.style.background = "url(./res/img/right_closed.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+        
+    opendoorbutton_right.style.display = "block";
+    closedoorbutton_right.style.display = "none";
+
+    lightbutton_right.style.display = "none";
+}        

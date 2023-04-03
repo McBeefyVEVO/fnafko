@@ -148,3 +148,93 @@ body{
     background-color: darkgray;
     color:white;
 }
+
+#lightbutton_left{
+    position: absolute;
+    display: none;
+
+    top: 45%;
+    left: 28%;
+
+    padding: 20px;
+    width: 125px;
+    font-size: 30px;
+
+    background-color: white;
+    color:black;
+}
+
+#opendoorbutton_left{
+    position: absolute;
+    display: none;
+
+    top: 55%;
+    left: 28%;
+
+    padding: 20px;
+    width: 125px;
+    font-size: 30px;
+
+    background-color: red;
+    color:white;
+}
+
+#lightbutton_right{
+    position: absolute;
+    display: none;
+
+    top: 45%;
+    left: 28%;
+
+    padding: 20px;
+    width: 125px;
+    font-size: 30px;
+
+    background-color: white;
+    color:black;
+}
+
+#opendoorbutton_right{
+    position: absolute;
+    display: none;
+
+    top: 55%;
+    left: 28%;
+
+    padding: 20px;
+    width: 125px;
+    font-size: 30px;
+
+    background-color: red;
+    color:white;
+}
+
+#closedoorbutton_left{
+    position: absolute;
+    display: none;
+
+    top: 55%;
+    left: 28%;
+
+    padding: 20px;
+    width: 125px;
+    font-size: 30px;
+
+    background-color: red;
+    color:white;
+}
+
+#closedoorbutton_right{
+    position: absolute;
+    display: none;
+
+    top: 55%;
+    left: 28%;
+
+    padding: 20px;
+    width: 125px;
+    font-size: 30px;
+
+    background-color: red;
+    color:white;
+}
