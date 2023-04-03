@@ -1,6 +1,9 @@
 # One Night at Forsen
 [Spustit](https://mcbeefyvevo.github.io/fnafko/)
 
+<h2>0.4</h2>
+<p>+Working Doors and Lights</p>
+
 <h2>0.3</h2>
 <p>+Looking left and right</p>
 
