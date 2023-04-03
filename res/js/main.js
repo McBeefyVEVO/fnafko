@@ -66,7 +66,7 @@ close_cam.onclick = () => {
 
 
 //------------------------------------------------------------------------------------------
-//Koukání doleva/doprava + dveře a světla
+//Koukání doleva/doprava
 
 
 look_left.onclick = () => {
@@ -157,6 +157,7 @@ look_right_back.onclick = () => {
 }
 
 //--------------------------------------------------------------------------------------------------------------
+//Světla
 
 lightbutton_left.onmousedown = () => {
             
@@ -199,7 +200,7 @@ lightbutton_right.onmouseup = () => {
         }    
 
 //-------------------------------------------------------------------------------------------
-
+//Dveře
     
 opendoorbutton_left.onclick = () => {
 
