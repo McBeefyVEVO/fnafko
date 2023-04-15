@@ -45,6 +45,25 @@ body{
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #open_cam{
     
     position: absolute;
@@ -74,10 +93,102 @@ body{
     width: 540px;
 
     font-size: 30px;
+    opacity: 50%;
 
     background-color: darkgray;
     color:white;
 }
+
+#map{
+    position: absolute;
+    display: none;
+    width: 740px;
+    top: 55%;
+    left: 61%;
+}
+#cam1{
+    position: absolute;
+    display: none;
+    top: 87%;
+    left: 72.6%;
+    background-color: darkgray;
+    color:black;}
+#cam2{
+    position: absolute;
+    display: none;
+    top: 74%;
+    left: 72.6%;
+    background-color: darkgray;
+    color:black;}
+#cam3{
+    position: absolute;
+    display: none;
+    top: 89%;
+    left: 68.5%;
+    background-color: darkgray;
+    color:black;}
+#cam4{
+    position: absolute;
+    display: none;
+    top: 68%;
+    left: 68%;
+    background-color: darkgray;
+    color:black;}
+#cam5{
+    position: absolute;
+    display: none;
+    top: 61%;
+    left: 70%;
+    background-color: darkgray;
+    color:black;}
+#cam6{
+    position: absolute;
+    display: none;
+    top: 58%;
+    left: 79.5%;
+    background-color: darkgray;
+    color:black;}
+#cam7{
+    position: absolute;
+    display: none;
+    top: 63%;
+    left: 91%;
+    background-color: darkgray;
+    color:black;}
+#cam8{
+    position: absolute;
+    display: none;
+    top: 67.4%;
+    left: 81%;
+    background-color: darkgray;
+    color:black;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #look_left{
     position: absolute;

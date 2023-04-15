@@ -4,6 +4,15 @@ const forsen = document.getElementById("forsen");
 
 const open_cam = document.getElementById("open_cam");
 const close_cam = document.getElementById("close_cam");
+const map = document.getElementById("map");
+const cam1 = document.getElementById("cam1");
+const cam2 = document.getElementById("cam2");
+const cam3 = document.getElementById("cam3");
+const cam4 = document.getElementById("cam4");
+const cam5 = document.getElementById("cam5");
+const cam6 = document.getElementById("cam6");
+const cam7 = document.getElementById("cam7");
+const cam8 = document.getElementById("cam8");
 
 const look_left = document.getElementById("look_left");
 const look_right = document.getElementById("look_right");
@@ -47,22 +56,120 @@ start.onclick = () => {
 //Kamerky
 
 open_cam.onclick = () => {
+    document.body.style.background = "url(./res/img/chem_storage.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+
     camera_on++;
     open_cam.style.display = "none";
     close_cam.style.display = "block";
     console.log(camera_on);
     look_left.style.display = "none";
     look_right.style.display = "none";
+
+    map.style.display = "block";
+    cam1.style.display = "block";
+    cam2.style.display = "block";
+    cam3.style.display = "block";
+    cam4.style.display = "block";
+    cam5.style.display = "block";
+    cam6.style.display = "block";
+    cam7.style.display = "block";
+    cam8.style.display = "block";
 }
 
 close_cam.onclick = () => {
+    document.body.style.background = "url(./res/img/office.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+
     camera_on--;
     open_cam.style.display = "block";
     close_cam.style.display = "none";
     console.log(camera_on);
     look_left.style.display = "block";
     look_right.style.display = "block";
+
+    map.style.display = "none";
+    cam1.style.display = "none";
+    cam2.style.display = "none";
+    cam3.style.display = "none";
+    cam4.style.display = "none";
+    cam5.style.display = "none";
+    cam6.style.display = "none";
+    cam7.style.display = "none";
+    cam8.style.display = "none";
 }
+
+cam1.onclick = () => {
+    document.body.style.background = "url(./res/img/chem_storage.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam2.onclick = () => {
+    document.body.style.background = "url(./res/img/mainroom.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam3.onclick = () => {
+    document.body.style.background = "url(./res/img/outside_fence.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam4.onclick = () => {
+    document.body.style.background = "url(./res/img/loadingbay.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam5.onclick = () => {
+    document.body.style.background = "url(./res/img/warehouse.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam6.onclick = () => {
+    document.body.style.background = "url(./res/img/vent_front.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam7.onclick = () => {
+    document.body.style.background = "url(./res/img/vent_rightdoor.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+cam8.onclick = () => {
+    document.body.style.background = "url(./res/img/office_front.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+}
+
+
 
 
 //------------------------------------------------------------------------------------------
