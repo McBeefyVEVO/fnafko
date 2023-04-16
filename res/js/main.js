@@ -28,11 +28,26 @@ const opendoorbutton_right = document.getElementById("opendoorbutton_right");
 const closedoorbutton_left = document.getElementById("closedoorbutton_left");
 const closedoorbutton_right = document.getElementById("closedoorbutton_right");
 
+//------------------------------------------------------------------------------------------
+
 let camera_on = 0;
 
 let leftopen = true;
 let rightopen = true;
 
+let forsen_pos = 1;
+
+// 1 = chem_storage
+// 2 = mainroom
+// 3 = outside_fence
+// 4 = loadingbay
+// 5 = warehouse
+// 6 = vent_front
+// 7 = vent_rightdoor
+// 8 = office_front
+// 9 = leftdoor
+// 10 = rightdoor
+// 11 = office
 
 //------------------------------------------------------------------------------------------
 //Startík
@@ -50,6 +65,8 @@ start.onclick = () => {
     open_cam.style.display = "block";
     look_left.style.display = "block";
     look_right.style.display = "block";
+
+    forsenmovelogic();
 }
 
 //------------------------------------------------------------------------------------------
@@ -376,3 +393,100 @@ closedoorbutton_right.onclick = () => {
 
     lightbutton_right.style.display = "none";
 }        
+
+//-------------------------------------------------------------------------------------------
+//Forsen AWARE
+
+let movelogic = 0;
+function forsenmovelogic(){
+    movelogic =  Math.floor((Math.random() * 15000) + 5000);
+    console.log("forsen timer " + movelogic)
+    forsenmovetimeout(movelogic);
+
+};
+
+function forsenmovetimeout(timeout){
+    setTimeout(() => {
+    movement();
+    console.log("forsen moved to " + forsen_pos);
+    forsenmovelogic();
+    }, timeout)
+
+};
+
+function movement() {
+
+    console.log(forsen_pos);
+
+    if(forsen_pos == 1){
+    logic = Math.floor((Math.random() * 100) + 1);
+    if(logic < 50){forsen_pos = 3}
+    else if(logic > 50){forsen_pos = 2};
+    }
+
+    //Alt Path
+
+    else if(forsen_pos == 3){
+    forsen_pos = 4;}
+    
+    else if(forsen_pos == 4){
+    forsen_pos = 5;}
+
+
+    else if(forsen_pos == 5){
+    logic = Math.floor((Math.random() * 100) + 1);
+    if(logic > 70){forsen_pos = 2}
+    else if(logic < 70){forsen_pos = 6};
+    }    
+
+    else if(forsen_pos == 6){
+    logic = Math.floor((Math.random() * 100) + 1);
+    if(logic > 50){forsen_pos = 8}
+    else if(logic < 50){forsen_pos = 7};}
+
+    else if(forsen_pos == 7){
+        forsen_pos = 10;}
+    
+    
+    
+    //Straight Path
+
+    else if(forsen_pos == 2){
+    forsen_pos = 8;
+    }
+
+    else if(forsen_pos == 8){
+    logic = Math.floor((Math.random() * 100) + 1);
+    if(logic < 50){forsen_pos = 9}
+    else if(logic > 50){forsen_pos = 10};    
+    }
+
+    //At the doors
+
+    else if(forsen_pos == 9 && leftopen == false){
+        forsen_pos = 1;
+    }
+
+    else if(forsen_pos == 10 && rightopen == false){
+        forsen_pos = 1;
+    }
+
+    else if(forsen_pos == 9){
+        if(leftopen == true){
+            forsen_pos = 11
+            console.log("u ded")
+        }
+    }
+
+    else if(forsen_pos == 10){
+        if(rightopen == true){
+            forsen_pos = 11
+            console.log("u ded")
+        }
+    }
+
+
+}
+
+console.log(forsen_pos);
+
