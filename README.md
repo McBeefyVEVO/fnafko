@@ -1,6 +1,12 @@
 # One Night at Forsen
 [Spustit](https://mcbeefyvevo.github.io/fnafko/)
 
+<h2>v1.0</h2>
+<p>+Forsen fully implemented</p>
+<p>+Timer</p>
+<p>+Winning</p>
+<p>+Dying</p>
+
 <h2>v0.6</h2>
 <p>+Forsen added (note: no visuals yet)</p>
 
