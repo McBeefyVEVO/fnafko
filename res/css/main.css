@@ -3,6 +3,8 @@ body{
     background-size: cover;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 #start{
 
     position: absolute;
@@ -10,6 +12,8 @@ body{
 
     padding: 25px;
     font-size:large;
+
+    font-family: 'Space Mono', monospace;
 
     top: 55%;
     left: 45%;
@@ -27,8 +31,10 @@ body{
     opacity: 90%;
     color: white;
 
+    font-family: 'Space Mono', monospace;
+
     padding: 45px;
-    font-size:large;
+    font-size:larger;
     letter-spacing: 5px;;
     
     left: 38%;
@@ -42,6 +48,20 @@ body{
 
     left: 40%;
     top: 8%;
+
+}
+
+#timer{
+    position: absolute;
+    display: none;
+    font-family: 'Space Mono', monospace;
+
+    padding: 15px;
+    font-size:large;
+
+    background-color:gray;
+    opacity: 90%;
+    color: white;
 
 }
 
@@ -72,6 +92,8 @@ body{
     top: 85%;
     left: 36%;
 
+    font-family: 'Space Mono', monospace;
+
     padding: 40px;
     width: 540px;
 
@@ -88,6 +110,8 @@ body{
 
     top: 85%;
     left: 36%;
+
+    font-family: 'Space Mono', monospace;
 
     padding: 40px;
     width: 540px;
@@ -200,6 +224,7 @@ body{
     height: 540px;
 
     top: 20%;
+    left: 0%;
 
     font-size: 30px;
 
@@ -217,7 +242,7 @@ body{
     height: 540px;
 
     top: 20%;
-    left: 96.7%;
+    left: 97.23%;
 
     font-size: 30px;
 
@@ -235,7 +260,7 @@ body{
     height: 540px;
 
     top: 20%;
-    left: 96.7%;
+    left: 97.23%;
 
     font-size: 30px;
 
@@ -253,6 +278,7 @@ body{
     height: 540px;
 
     top: 20%;
+    left: 0%;
 
     font-size: 30px;
 
@@ -263,6 +289,7 @@ body{
 #lightbutton_left{
     position: absolute;
     display: none;
+    font-family: 'Space Mono', monospace;
 
     top: 45%;
     left: 28%;
@@ -278,6 +305,7 @@ body{
 #opendoorbutton_left{
     position: absolute;
     display: none;
+    font-family: 'Space Mono', monospace;
 
     top: 55%;
     left: 28%;
@@ -293,6 +321,7 @@ body{
 #lightbutton_right{
     position: absolute;
     display: none;
+    font-family: 'Space Mono', monospace;
 
     top: 45%;
     left: 28%;
@@ -308,6 +337,7 @@ body{
 #opendoorbutton_right{
     position: absolute;
     display: none;
+    font-family: 'Space Mono', monospace;
 
     top: 55%;
     left: 28%;
@@ -323,6 +353,7 @@ body{
 #closedoorbutton_left{
     position: absolute;
     display: none;
+    font-family: 'Space Mono', monospace;
 
     top: 55%;
     left: 28%;
@@ -338,6 +369,7 @@ body{
 #closedoorbutton_right{
     position: absolute;
     display: none;
+    font-family: 'Space Mono', monospace;
 
     top: 55%;
     left: 28%;
@@ -349,3 +381,57 @@ body{
     background-color: red;
     color:white;
 }
+
+
+
+
+
+
+
+
+
+
+#deathgif{
+    position: absolute;
+    display: none;
+
+    top: 41%;
+    left: 49%;
+}
+
+#retry{
+    position: absolute;
+    display: none;
+
+    background-color: darkgray;
+    opacity: 0%;
+
+    top: 58.5%;
+    left: 44.7%;
+
+    width: 250px;
+    height: 100px;
+}
+
+#exit{
+    position: absolute;
+    display: none;
+
+    background-color: darkgray;
+    opacity: 0%;
+
+    top: 50.5%;
+    left: 46.7%;
+
+    width: 250px;
+    height: 100px;
+}
+
+#wingif{
+    position: absolute;
+    display: none;
+
+    top: 35%;
+    left: 51%;
+}
+

@@ -1,6 +1,7 @@
 const start = document.getElementById("start");
 const main_title = document.getElementById("main_title");
 const forsen = document.getElementById("forsen");
+const timer = document.getElementById("timer");
 
 const open_cam = document.getElementById("open_cam");
 const close_cam = document.getElementById("close_cam");
@@ -28,14 +29,22 @@ const opendoorbutton_right = document.getElementById("opendoorbutton_right");
 const closedoorbutton_left = document.getElementById("closedoorbutton_left");
 const closedoorbutton_right = document.getElementById("closedoorbutton_right");
 
+const deathgif = document.getElementById("deathgif")
+const retry = document.getElementById("retry")
+const exit = document.getElementById("exit")
+const wingif = document.getElementById("wingif")
+
 //------------------------------------------------------------------------------------------
 
 let camera_on = 0;
+let victory = 0;
 
 let leftopen = true;
 let rightopen = true;
 
 let forsen_pos = 1;
+
+console.log(forsen_pos);
 
 // 1 = chem_storage
 // 2 = mainroom
@@ -47,10 +56,34 @@ let forsen_pos = 1;
 // 8 = office_front
 // 9 = leftdoor
 // 10 = rightdoor
-// 11 = office
+// 11 = YOU
+// 12 = no escape room
 
 //------------------------------------------------------------------------------------------
-//Startík
+//Startík + function
+
+function stoptimer() {
+    if(timer.innerHTML == 0){
+        clearInterval()
+    
+        document.body.style.background = "url(./res/img/winscreen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+    
+        start.style.display = "none";
+        main_title.style.display = "none";
+        forsen.style.display = "none";
+        open_cam.style.display = "none";
+        look_left.style.display = "none";
+        look_right.style.display = "none";
+        timer.style.display = "none";
+        wingif.style.display = "block";
+        exit.style.display = "block";
+        victory = 1;
+    }
+};
 
 start.onclick = () => {
     document.body.style.background = "url(./res/img/office.png)";
@@ -65,6 +98,9 @@ start.onclick = () => {
     open_cam.style.display = "block";
     look_left.style.display = "block";
     look_right.style.display = "block";
+    timer.style.display = "block";
+
+    timerlogic = setInterval(function () {stoptimer();timer.innerHTML--}, 1000);
 
     forsenmovelogic();
 }
@@ -85,6 +121,7 @@ open_cam.onclick = () => {
     console.log(camera_on);
     look_left.style.display = "none";
     look_right.style.display = "none";
+    timer.style.display = "none";
 
     map.style.display = "block";
     cam1.style.display = "block";
@@ -95,6 +132,32 @@ open_cam.onclick = () => {
     cam6.style.display = "block";
     cam7.style.display = "block";
     cam8.style.display = "block";
+
+    if(forsen_pos == 1){
+        document.body.style.background = "url(./res/img/chem_storage_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+    
+        camera_on++;
+        open_cam.style.display = "none";
+        close_cam.style.display = "block";
+        console.log(camera_on);
+        look_left.style.display = "none";
+        look_right.style.display = "none";
+        timer.style.display = "none";
+    
+        map.style.display = "block";
+        cam1.style.display = "block";
+        cam2.style.display = "block";
+        cam3.style.display = "block";
+        cam4.style.display = "block";
+        cam5.style.display = "block";
+        cam6.style.display = "block";
+        cam7.style.display = "block";
+        cam8.style.display = "block"; 
+    }
 }
 
 close_cam.onclick = () => {
@@ -110,6 +173,7 @@ close_cam.onclick = () => {
     console.log(camera_on);
     look_left.style.display = "block";
     look_right.style.display = "block";
+    timer.style.display = "block";
 
     map.style.display = "none";
     cam1.style.display = "none";
@@ -128,6 +192,14 @@ cam1.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 1){
+        document.body.style.background = "url(./res/img/chem_storage_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+    }
 }
 
 cam2.onclick = () => {
@@ -136,6 +208,14 @@ cam2.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 2){
+        document.body.style.background = "url(./res/img/mainroom_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        }
 }
 
 cam3.onclick = () => {
@@ -144,6 +224,14 @@ cam3.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 3){
+        document.body.style.background = "url(./res/img/outside_fence_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        }
 }
 
 cam4.onclick = () => {
@@ -152,6 +240,14 @@ cam4.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 4){
+        document.body.style.background = "url(./res/img/loadingbay_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+    }
 }
 
 cam5.onclick = () => {
@@ -160,6 +256,14 @@ cam5.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 5){
+        document.body.style.background = "url(./res/img/warehouse_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        }
 }
 
 cam6.onclick = () => {
@@ -168,6 +272,14 @@ cam6.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 6){
+        document.body.style.background = "url(./res/img/vent_front_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        }
 }
 
 cam7.onclick = () => {
@@ -176,6 +288,14 @@ cam7.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 7){
+        document.body.style.background = "url(./res/img/vent_rightdoor_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        }
 }
 
 cam8.onclick = () => {
@@ -184,6 +304,14 @@ cam8.onclick = () => {
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 8){
+        document.body.style.background = "url(./res/img/office_front_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        }
 }
 
 
@@ -193,7 +321,7 @@ cam8.onclick = () => {
 //Koukání doleva/doprava
 
 
-look_left.onclick = () => {
+look_left.onmouseover = () => {
     document.body.style.background = "url(./res/img/left_open.png)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPosition = "center center";
@@ -217,9 +345,11 @@ look_left.onclick = () => {
         
         lightbutton_left.style.display = "none";
     }
+
+
 }
 
-look_right.onclick = () => {
+look_right.onmouseover = () => {
     console.log(rightopen)
     document.body.style.background = "url(./res/img/right_open.png)";
     document.body.style.backgroundRepeat = "no-repeat";
@@ -246,7 +376,8 @@ look_right.onclick = () => {
     }
 }
 
-look_left_back.onclick = () => {
+
+look_left_back.onmouseout = () => {
     document.body.style.background = "url(./res/img/office.png)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPosition = "center center";
@@ -263,7 +394,7 @@ look_left_back.onclick = () => {
     opendoorbutton_left.style.display = "none";
 }
 
-look_right_back.onclick = () => {
+look_right_back.onmouseout = () => {
     document.body.style.background = "url(./res/img/office.png)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPosition = "center center";
@@ -291,6 +422,16 @@ lightbutton_left.onmousedown = () => {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed";
 
+    if(forsen_pos == 9){
+        document.body.style.background = "url(./res/img/left_open_light_forsen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+    }
+
+    
+
     };
 
 lightbutton_left.onmouseup = () => {
@@ -305,11 +446,19 @@ lightbutton_left.onmouseup = () => {
     
 lightbutton_right.onmousedown = () => {
             
-        document.body.style.background = "url(./res/img/right_open_light.png)";
+    document.body.style.background = "url(./res/img/right_open_light.png)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+
+    if(forsen_pos == 10){
+        document.body.style.background = "url(./res/img/right_open_light_forsen.png)";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundAttachment = "fixed";
+        }
     
         };
     
@@ -474,6 +623,7 @@ function movement() {
     else if(forsen_pos == 9){
         if(leftopen == true){
             forsen_pos = 11
+            dead = 1;
             console.log("u ded")
         }
     }
@@ -481,12 +631,61 @@ function movement() {
     else if(forsen_pos == 10){
         if(rightopen == true){
             forsen_pos = 11
+            dead = 1;
             console.log("u ded")
         }
     }
 
+    if(forsen_pos == 11){
+        clearInterval(timerlogic)
+    
+                document.body.style.background = "url(./res/img/deathscreen.png)";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundPosition = "center center";
+                document.body.style.backgroundSize = "cover";
+                document.body.style.backgroundAttachment = "fixed";
+                start.style.display = "none";
+                main_title.style.display = "none";
+                forsen.style.display = "none";
+                open_cam.style.display = "none";
+                look_left.style.display = "none";
+                look_left_back.style.display = "none";
+                look_right.style.display = "none";
+                look_right_back.style.display = "none";
+                lightbutton_left.style.display = "none";
+                lightbutton_right.style.display = "none";
+                timer.style.display = "none";
+
+                deathgif.style.display = "block";
+                retry.style.display = "block";
+    }
+
+    else if(victory == 1){
+        forsen_pos = 12;
+    }
+
+    
 
 }
 
 console.log(forsen_pos);
+
+//-------------------------------------------------------------------------------------------
+//Timer
+
+//Posunul jsem to do startíku lol i wanna fucking kill myself
+
+
+//-------------------------------------------------------------------------------------------
+//IDK
+
+retry.onclick = () => 
+{
+    window.location.reload();
+}
+
+exit.onclick = () => 
+{
+    window.location.reload();
+}
 
