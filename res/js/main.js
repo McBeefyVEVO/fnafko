@@ -2,6 +2,7 @@ const start = document.getElementById("start");
 const main_title = document.getElementById("main_title");
 const forsen = document.getElementById("forsen");
 const timer = document.getElementById("timer");
+const power = document.getElementById("power");
 
 const open_cam = document.getElementById("open_cam");
 const close_cam = document.getElementById("close_cam");
@@ -79,6 +80,7 @@ function stoptimer() {
         look_left.style.display = "none";
         look_right.style.display = "none";
         timer.style.display = "none";
+        power.style.display = "none";
         wingif.style.display = "block";
         exit.style.display = "block";
         victory = 1;
@@ -99,8 +101,10 @@ start.onclick = () => {
     look_left.style.display = "block";
     look_right.style.display = "block";
     timer.style.display = "block";
+    power.style.display = "block";
 
     timerlogic = setInterval(function () {stoptimer();timer.innerHTML--}, 1000);
+    powerlogic = setInterval(function () {stoptimer2();power.innerHTML--}, 30000);
 
     forsenmovelogic();
 }
@@ -121,7 +125,8 @@ open_cam.onclick = () => {
     console.log(camera_on);
     look_left.style.display = "none";
     look_right.style.display = "none";
-    timer.style.display = "none";
+    timer.style.display = "block";
+    power.style.display = "block";
 
     map.style.display = "block";
     cam1.style.display = "block";
@@ -132,6 +137,7 @@ open_cam.onclick = () => {
     cam6.style.display = "block";
     cam7.style.display = "block";
     cam8.style.display = "block";
+    sussy3 = setInterval(function () {stoptimer2();power.innerHTML--}, 10000);
 
     if(forsen_pos == 1){
         document.body.style.background = "url(./res/img/chem_storage_forsen.png)";
@@ -146,7 +152,8 @@ open_cam.onclick = () => {
         console.log(camera_on);
         look_left.style.display = "none";
         look_right.style.display = "none";
-        timer.style.display = "none";
+        timer.style.display = "block";
+        power.style.display = "block";
     
         map.style.display = "block";
         cam1.style.display = "block";
@@ -161,6 +168,7 @@ open_cam.onclick = () => {
 }
 
 close_cam.onclick = () => {
+
     document.body.style.background = "url(./res/img/office.png)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundPosition = "center center";
@@ -174,6 +182,7 @@ close_cam.onclick = () => {
     look_left.style.display = "block";
     look_right.style.display = "block";
     timer.style.display = "block";
+    power.style.display = "block";
 
     map.style.display = "none";
     cam1.style.display = "none";
@@ -184,6 +193,8 @@ close_cam.onclick = () => {
     cam6.style.display = "none";
     cam7.style.display = "none";
     cam8.style.display = "none";
+    clearInterval(sussy3);
+  
 }
 
 cam1.onclick = () => {
@@ -476,7 +487,8 @@ lightbutton_right.onmouseup = () => {
 //Dveře
     
 opendoorbutton_left.onclick = () => {
-
+    
+    clearInterval(sussy)
     leftopen = true;
     console.log(leftopen)
 
@@ -507,10 +519,13 @@ closedoorbutton_left.onclick = () => {
     closedoorbutton_left.style.display = "none";
 
     lightbutton_left.style.display = "none";
-}
+
+    sussy = setInterval(function () {stoptimer2();power.innerHTML--}, 5000);
+    }
+
 
 opendoorbutton_right.onclick = () => {
-
+    clearInterval(sussy2)
     rightopen = true;
     console.log(rightopen)
 
@@ -541,6 +556,7 @@ closedoorbutton_right.onclick = () => {
     closedoorbutton_right.style.display = "none";
 
     lightbutton_right.style.display = "none";
+    sussy2 = setInterval(function () {stoptimer2();power.innerHTML--}, 5000);
 }        
 
 //-------------------------------------------------------------------------------------------
@@ -689,3 +705,32 @@ exit.onclick = () =>
     window.location.reload();
 }
 
+//-------------------------------------------------------------------------------------------
+//power 
+function stoptimer2() {
+    if(power.innerHTML == 0){
+        clearInterval()
+        document.body.style.background = "url(./res/img/deathscreen.png)";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
+        start.style.display = "none";
+        main_title.style.display = "none";
+        forsen.style.display = "none";
+        open_cam.style.display = "none";
+        look_left.style.display = "none";
+        look_left_back.style.display = "none";
+        look_right.style.display = "none";
+        look_right_back.style.display = "none";
+        lightbutton_left.style.display = "none";
+        lightbutton_right.style.display = "none";
+        timer.style.display = "none";
+        power.style.display = "none";
+
+        deathgif.style.display = "block";
+        retry.style.display = "block";
+        dead = 1;
+        console.log("u ded")
+    }
+};

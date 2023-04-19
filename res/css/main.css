@@ -65,7 +65,20 @@ body{
 
 }
 
+#power{
+    position: absolute;
+    display: none;
+    font-family: 'Space Mono', monospace;
 
+    top: 93%;
+    padding: 15px;
+    font-size:large;
+
+    background-color:gray;
+    opacity: 90%;
+    color: white;
+
+}
 
 
 
